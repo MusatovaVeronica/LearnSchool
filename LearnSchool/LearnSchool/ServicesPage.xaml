@@ -1,0 +1,43 @@
+﻿<Page x:Class="LearnSchool.ServicesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LearnSchool"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ServicesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="673*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Услуги"  
+               HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Margin="277,7,311,0" Height="43" Width="92"/>
+        <DataGrid Name="ServicesGrid" AutoGenerateColumns="False"
+                  IsReadOnly="True" FontSize="12" IsVisibleChanged="ServicesGrid_IsVisibleChanged" Grid.Column="1" Grid.Row="1" Height="Auto" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" FontSize="12" Width="*" Binding="{Binding ManufacturerId}"/>
+                <DataGridTextColumn Header="Услуга" FontSize="12" Width="*" Binding="{Binding ManufacturerTitle}" />
+                <DataGridTemplateColumn  Header="Изменить" Width="120" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Изменить" Name="BtnChangeService" FontSize="12" Click="BtnChangeService_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="AddService" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                Content="Добавить" Click="AddService_Click" Grid.Column="1"  Grid.Row="2" Height="Auto" Width="Auto"/>
+        <Button Name="DeleteService"  HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                Content="Удалить" Click="DeleteService_Click" Grid.Column="1" Grid.Row="2"  Height="Auto" Width="Auto"/>
+    </Grid>
+</Page>

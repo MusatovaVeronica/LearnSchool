@@ -1,0 +1,16 @@
+﻿<Page x:Class="LearnSchool.AuthorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LearnSchool"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthorizationPage">
+
+    <Grid>
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Center"  VerticalAlignment="Center"></Label>
+        <Button x:Name="BtnLogin" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,120,0,0" Click="BtnLogin_Click" />
+
+    </Grid>
+</Page>
